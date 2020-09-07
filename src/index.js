@@ -5,7 +5,9 @@ import App from './components/App';
 // Import to create redux store
 import reducers from './reducers';
 import {Provider} from 'react-redux';
-import {createStore} from "redux";
+import {createStore, applyMiddleware} from "redux";
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from "./sagas";
 
 // Axios
 import axios from 'axios';
@@ -14,8 +16,14 @@ import axios from 'axios';
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = 'https://rem-rest-api.herokuapp.com/api';
 
+// Create saga middleware
+const sagaMiddleware = createSagaMiddleware();
+
 // Create redux store
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
+
 
 ReactDOM.render(
   <React.StrictMode>
