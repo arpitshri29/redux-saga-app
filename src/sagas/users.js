@@ -24,9 +24,12 @@ function* watchGetUsersRequest() {
     yield takeEvery(actions.Types.GET_USERS_REQUEST, getUsers)
 }
 
-function* createUser(action) {
+function* createUser({payload}) {
     try{
-        yield call(api.createUser, {firstName: action.payload.firstName, lastName: action.payload.lastName});
+        yield call(api.createUser, {
+            firstName: payload.firstName,
+            lastName: payload.lastName
+        });
         yield call(getUsers);
     } catch(e) {
         yield put(actions.usersError({
