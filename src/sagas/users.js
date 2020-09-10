@@ -55,10 +55,8 @@ function* deleteUser({userId}) {
 
 function* watchDeleteUserRequest() {
     while (true){
-        const action = yield take(actions.Types.DELETE_USER_REQUEST);
-        yield call(deleteUser, {
-            userId: action.payload.userId
-        });
+        const {payload} = yield take(actions.Types.DELETE_USER_REQUEST);
+        yield call(deleteUser, payload.userId);
     }
 }
 
