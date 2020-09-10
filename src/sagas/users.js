@@ -39,7 +39,7 @@ function* watchCreateUserRequest() {
     yield takeLatest(actions.Types.CREATE_USER_REQUEST, createUser)
 }
 
-function* deleteUser({userId}) {
+function* deleteUser(userId) {
     try{
         yield call(api.deleteUser, userId);
         yield call(getUsers);
