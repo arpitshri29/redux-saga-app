@@ -5,7 +5,7 @@ export const getUsers = () => {
         params: {
             limit: 1000
         }
-    })
+    });
 };
 
 export const createUser = ({firstName, lastName}) => {
@@ -16,5 +16,5 @@ export const createUser = ({firstName, lastName}) => {
 };
 
 export const deleteUser = (userId) => {
-    return axios.delete(`/users/${userId}`)
-}
+    return axios.delete(`/users/${userId}`);
+};

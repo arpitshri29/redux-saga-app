@@ -60,10 +60,10 @@ function* watchDeleteUserRequest() {
     }
 }
 
-const usersSagas = [
+const userSagas = [
     fork(watchGetUsersRequest),
     fork(watchCreateUserRequest),
     fork(watchDeleteUserRequest)
 ];
 
-export default usersSagas;
+export default userSagas;
