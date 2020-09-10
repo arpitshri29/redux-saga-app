@@ -38,7 +38,9 @@ class App extends Component{
                 {this.props.users.error}
             </Alert>
             <NewUserForm onSubmit={this.handleSubmit}/>
+            {!!users.items && !!users.items.length &&
             <UsersList onDeleteUser={this.handleDeleteUser()} users={users.items}/>
+            }
         </div>
     );
   }
