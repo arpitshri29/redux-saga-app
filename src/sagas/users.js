@@ -1,7 +1,6 @@
 import {takeEvery, takeLatest, call, fork, put, take} from 'redux-saga/effects';
 import * as actions from '../actions/users';
 import * as api from '../api/users';
-import {deleteUserRequest} from "../actions/users";
 
 /*
     Generator functions
