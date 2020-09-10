@@ -14,9 +14,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 // Set axios defaults
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'https://rem-rest-api.herokuapp.com/api';
-// axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://rem.dbwebb.se/api';
+// axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = 'https://rem-rest-api.herokuapp.com/api';
+axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://rem.dbwebb.se/api';
 
 // Create saga middleware
 const sagaMiddleware = createSagaMiddleware();
