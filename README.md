@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[Demo](https://react-saga-add-delete-user.netlify.app/) of the app.
+
 ## Available Scripts
 
 In the project directory, you can run:
